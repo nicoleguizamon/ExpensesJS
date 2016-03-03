@@ -1,0 +1,27 @@
+﻿<hr />
+<div class="row" ng-repeat="product in vm.products">
+    <hr />
+    <div class="media">
+        <div class="col-sm-4">
+            <img class="media-object img-responsive" ng-src="{{product.MainImage}}" alt="{{product.ProductName}}" />
+            
+        </div>
+        <div class="col-sm-8">
+            <div class="media-body">
+                <h4 class="media-heading">{{product.ProductName}}</h4>
+                <h5>
+                    {{ product.ProductPrice | currency: "$" : 2}}
+                </h5>
+
+                <div class="media-body">
+                    <div>
+                        {{product.ProductDescription}}
+                    </div>
+                   <div>
+                       <button class="btn btn-xs btn-success" ng-click="vm.buy(post.Id)">Comprar</button>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
